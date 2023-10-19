@@ -23,8 +23,15 @@ def calc_distance(row):
             i += 1
         return totalDist
 
-distances = list(csv.DictReader(open("data/Routes - distances.csv")))
+# distances = list(csv.DictReader(open("data/Routes - distances.csv")))
 routes = list(csv.DictReader(open("data/Routes - routes.csv")))
+with open('data/Routes - distances.csv', 'r') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
+    distances = []
+    for eachrow in csv_reader:
+        eachrow['distance'] = int(eachrow['distance'])
+        distances.append(eachrow)
+
 for row in routes:
     totaldistance = calc_distance(row)
     print(f"Distance from {row['source']} to {row['destination']} is {totaldistance}.")
