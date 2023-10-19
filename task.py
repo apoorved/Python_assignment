@@ -1,5 +1,4 @@
 import csv
-# format distance to integers on file read
 
 def get_stops(string):
     li = list(string.split(", "))
@@ -11,7 +10,7 @@ def is_trip(firstcity, secondcity, row):
 def get_trip_distance(firstcity, secondcity):
     for row in distances:
         if is_trip(firstcity,secondcity, row):
-            return int(row['distance'])
+            return (row['distance'])
         
 def calc_distance(row):
         stops = get_stops(row['stops'])
