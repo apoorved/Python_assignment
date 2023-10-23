@@ -1,6 +1,6 @@
 import sys
 import argparse
-from functions import functions
+from functionsCalculator import functions
 
 args_dict = [{'name': 'operand','type': str, 'help':'The operation to be performed *,/,-,+'},
              {'name': 'first_value','type': int, 'help':'The first numerical value'},
